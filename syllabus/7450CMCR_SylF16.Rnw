@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\bibpunct{(}{)}{;}{a}{}{,}
+\setlength{\tabcolsep}{1pt}
+\usepackage{hanging}
+
+\def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}
+
+
+\newenvironment{readings}{& \textbf{Readings:} }{}
+\newenvironment{recommended}{& \textit{Recommended:} }{}
+\newenvironment{assignment}{& \textbf{Assignment:} }{}
+\newcommand{\R}{\textsf{R}~}
+
+\begin{document}
+
+\title{POLI 7450 \\ Computational Methods for\\ Comparative Research}
+
+\author{Fall 2016\\
+W 1:30 to 4:20 pm\\
+337 Schaeffer Hall\\
+\\
+Prof.~Frederick Solt\\
+Office: 324 Schaeffer Hall \\
+Office Hours: MW  9:30 to 11:00 am and by appointment\\
+E-mail: \href{mailto:frederick-solt@uiowa.edu}{\texttt{frederick-solt@uiowa.edu}}\\
+}
+\date{ }
+\maketitle 
+
+\section{Overview}
+In this course, you will learn to identify common methodological issues encountered in quantitative comparative research and to address them using computational techniques.  Topics covered include data wrangling, exploration, and analysis (i.e., `data science'); Bayesian estimation of latent variables such as democracy, judicial independence, and respect for human rights across countries and over time; and computational approaches to the study to the dynamics of public opinion both within and across countries. This course is cross-listed in Comparative Politics and Methodology; it may be used to meet requirements in either subfield (but not both).
+
+\pagebreak
+\section{Course Requirements}
+Your grade will be based on class participation (25\%), assignments (25\%), an exam (25\%), and a research paper (25\%).  The following grades may be assigned at the end of the class: A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F.
+%
+\subsection{Class Participation}
+By this point in your career this should really go without saying, but here it is anyway: you can't learn if you don't show up.  
+You should attend every class meeting having completed the readings and assignments, that is, you should be ready to discuss use cases, ask good questions, and share any difficulties you've encountered.  
+
+We will also be using \href{https://github.com/cmcr-class/Discussion/issues}{the Issues tab of a dedicated GitHub repository} to continue our discussions outside of class. 
+To start a new thread, create a new issue. 
+If you want to be sure to get the attention of someone in particular, use their GitHub handle---mine is \texttt{@fsolt}---to tag them in your post: GitHub sends an email to people when they are tagged.
+
+
+\subsection{Assignments}
+To practice your new skills, you will complete regular assignments.  Most will be completed through GitHub in a private repository for each student to which only I will have access.  
+
+
+\subsection{Exam}
+The exam will be held in class on Oct 5.  It will be open-note, open-interwebs---you know, like \href{http://www.theallium.com/engineering/computer-programming-to-be-officially-renamed-googling-stackoverflow/}{IRL}.
+
+
+\subsection{Research Paper}
+The research paper for this course is more straightforward than the usual: the assignment is ``simply'' to write a fully reproducible version of a quantitative research paper you prepared for another class.  
+Ideally the paper will be for a class you are taking this semester, so that you use best practices as you go; you will need to confirm with the instructor of that course that this is acceptable to her or him.  
+Rewriting a promising paper from past coursework will also be fine, though.  If you're stuck for an appropriate paper, talk to me.  
+We will work it out.
+
+\noindent In your paper, you will:
+
+\begin{itemize}
+\item write using either RMarkdown or \texttt{knitr}, interspercing \R code and text,
+\item begin with raw data collection,
+\item include all steps of data cleaning and analysis,
+\item present figures rather than tables,
+\item use Bib\TeX~for citations,
+\item generate PDF, html, and (eewwww!) Word versions,
+\item do your work in a GitHub repository,
+\item submit a link to that repo.
+\end{itemize}
+
+\noindent Papers are due the last day of exam week, Friday, Dec 16, at 5pm. %date
+
+\section{Class Schedule}
+\begin{tabular}{l p{4.5in}}
+    Aug 24 &    Introduction to the Course\\   
+			\readings{} \\
+    \\  
+    Aug 31 &    APSA (No class)       \\ 
+    \\     
+    Sept 7 &    Reproducibility  	\\
+		&	RMarkdown, knitr, pandoc, checkpoint, downloads \\     
+    Sept 14 &   Wranglin' Data	\\
+        &   dplyr, tidyr, stringr\\
+    Sept 21 &	Visualization \\
+		&   ggplot, [maps]	\\   		  
+    Sept 28 &		  \\
+    \\      
+    Oct 5 &     	Exam \\
+    				&	\\
+				\\ 
+    Oct 12 &		  \\
+         			        \\
+\end{tabular} 
+\begin{tabular}{l p{4.5in}}
+    \\     
+    Oct 19 &		 \\
+        			& 			\qquad            \\\\  
+     \\     
+    Oct 26 &    \\   
+			\readings{} \\
+    \\ 
+    Nov 2 &    \\   
+			\readings{} \\
+    Nov 9 &   \\   
+			\readings{} \\
+    \\ 
+    Nov 16 &    \\   
+			\readings{} \\
+    \\ 
+    Nov 23 &   FALL BREAK \\   
+			\readings{} \\
+    \\ 
+    Nov 30 &    \\   
+			 \\
+    \\ 
+    Dec 7 &    \\   
+			\readings{}\\
+    \\ 
+    \\ 
+\end{tabular}    
+
+
+\newpage
+\section{Further Course Information}
+The following CLAS policy and procedural statements have been summarized from the web pages of the \href{http://clas.uiowa.edu}{College of Liberal Arts and Sciences} and \href{http://www.uiowa.edu/~our/opmanual/index.html}{\emph{The University of Iowa Operations Manual}}.
+
+\subsection*{Administrative Home}
+The College of Liberal Arts and Sciences is the administrative home of this course and governs matters such as the add/drop deadlines, the second-grade-only option, and other related issues. Different colleges may have different policies. Questions may be addressed to 120 Schaeffer Hall, or see the \href{http://clas.uiowa.edu/students/handbook}{CLAS \emph{Student Academic Handbook}}.
+
+\subsection*{Electronic Communication}
+University policy specifies that students are responsible for all official correspondences sent to their University of Iowa e-mail address (@uiowa.edu). Faculty and students should use this account for correspondences. (\href{http://www.uiowa.edu/~our/opmanual/iii/15.htm#152}{\emph{Operations Manual}, III.15.2}. Scroll down to k.11.)
+
+\subsection*{Accommodations for Disabilities}
+The University of Iowa is committed to providing an educational experience that is accessible to all students. A student may request academic accommodations for a disability (which include but are not limited to mental health, attention, learning, vision, and physical or health-related conditions). A student seeking academic accommodations should first register with Student Disability Services and then meet with the course instructor privately in the instructor's office to make particular arrangements. Reasonable accommodations are established through an interactive process between the student, instructor, and SDS. See \url{http://sds.studentlife.uiowa.edu/} for information. 
+
+\subsection*{Academic Honesty}
+The College of Liberal Arts and Sciences expects all students to do their own work, as stated in the \href{http://clas.uiowa.edu/students/handbook/academic-fraud-honor-code}{CLAS Code of Academic Honesty}. Instructors fail any assignment that shows evidence of plagiarism or other forms of cheating, also reporting the student's name to the College. A student reported to the College for cheating is placed on disciplinary probation; a student reported twice is suspended or expelled.
+
+\subsection*{Collaboration}
+All assignments in this class are to be completed individually.  Do not share your work with others or ask others to see their completed assignments since both are considered academic misconduct.  You are responsible for understanding this policy; if you have questions, ask for clarification.
+
+\subsection*{CLAS Final Examination Policies}
+Final exams may be offered only during finals week. No exams of any kind are allowed during the last week of classes. Students should not ask their instructor to reschedule a final exam since the College does not permit rescheduling of a final exam once the semester has begun. Questions should be addressed to the Associate Dean for Undergraduate Programs and Curriculum.
+
+\subsection*{Making a Suggestion or a Complaint}
+Students with a suggestion or complaint should first visit the instructor, \href{mailto:frederick-solt@uiowa.edu}{Professor Solt}, and then the departmental DEO, \href{mailto:wenfang-tang@uiowa.edu}{Dr.~Wenfang Tang} (Office: 343 SH). Complaints must be made within six months of the incident. See the \href{http://clas.uiowa.edu/students/handbook}{CLAS Student Academic Handbook}.
+
+\subsection*{Understanding Sexual Harassment}
+Sexual harassment subverts the mission of the University and threatens the well-being of students, faculty, and staff. All members of the UI community have a responsibility to uphold this mission and to contribute to a safe environment that enhances learning. Incidents of sexual harassment should be reported immediately. See the UI Comprehensive Guide on Sexual Harassment for assistance, definitions, and the full University policy.
+
+\subsection*{Reacting Safely to Severe Weather}
+In severe weather, class members should seek appropriate shelter immediately, leaving the classroom if necessary. The class will continue if possible when the event is over. For more information on Hawk Alert and the siren warning system, visit the Public Safety web site.
+
+\subsection*{Student Resources}
+I encourage interested students to make use of \href{http://www.uiowa.edu/~writingc/}{the Writing Center} and \href{http://imu.uiowa.edu/cic/}{the Campus Information Center's Tutor Referral Services} at the IMU.
+
+
+\end{document}
