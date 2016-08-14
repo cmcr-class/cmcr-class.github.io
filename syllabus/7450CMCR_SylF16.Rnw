@@ -13,7 +13,7 @@
 \def\urltilda{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}
 
 
-\newenvironment{readings}{& \textbf{Readings:} }{}
+\newenvironment{reading}{& \textbf{Reading:} }{}
 \newenvironment{recommended}{& \textit{Recommended:} }{}
 \newenvironment{assignment}{& \textbf{Assignment:} }{}
 \newcommand{\R}{\textsf{R}~}
@@ -42,8 +42,8 @@ In this course, you will learn to identify common methodological issues encounte
 Your grade will be based on class participation (25\%), assignments (25\%), an exam (25\%), and a research paper (25\%).  The following grades may be assigned at the end of the class: A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F.
 %
 \subsection{Class Participation}
-By this point in your career this should really go without saying, but here it is anyway: you can't learn if you don't show up.  
-You should attend every class meeting having completed the readings and assignments, that is, you should be ready to discuss use cases, ask good questions, and share any difficulties you've encountered.  
+By this point in your career this should really go without saying, but here it is anyway: you can't learn in a class if you don't show up.  
+You should attend every meeting having completed the readings and assignments, that is, you should be ready to discuss use cases, ask good questions, and share any difficulties you've encountered.  
 
 We will also be using \href{https://github.com/cmcr-class/Discussion/issues}{the Issues tab of a dedicated GitHub repository} to continue our discussions outside of class. 
 To start a new thread, create a new issue. 
@@ -51,7 +51,7 @@ If you want to be sure to get the attention of someone in particular, use their 
 
 
 \subsection{Assignments}
-To practice your new skills, you will complete regular assignments.  Most will be completed through GitHub in a private repository for each student to which only I will have access.  
+To practice your new skills, you will have regular assignments.  Many will be completed through GitHub in a private repository for each student (besides you, only I will have access to your homework repo).  
 
 
 \subsection{Exam}
@@ -64,7 +64,7 @@ Ideally the paper will be for a class you are taking this semester, so that you 
 Rewriting a promising paper from past coursework will also be fine, though.  If you're stuck for an appropriate paper, talk to me.  
 We will work it out.
 
-\noindent In your paper, you will:
+\noindent For your paper, you will:
 
 \begin{itemize}
 \item write using either RMarkdown or \texttt{knitr}, interspercing \R code and text,
@@ -72,7 +72,7 @@ We will work it out.
 \item include all steps of data cleaning and analysis,
 \item present figures rather than tables,
 \item use Bib\TeX~for citations,
-\item generate PDF, html, and (eewwww!) Word versions,
+\item generate PDF, html, and (\raisebox{0.7ex}{ee}\raisebox{0.3ex}{e}w\raisebox{-0.3ex}{www}!) Word versions,
 \item do your work in a GitHub repository,
 \item submit a link to that repo.
 \end{itemize}
@@ -82,16 +82,29 @@ We will work it out.
 \section{Class Schedule}
 \begin{tabular}{l p{4.5in}}
     Aug 24 &    Introduction to the Course\\   
-			\readings{} \\
+			\assignment{\href{http://happygitwithr.com}{Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapters 1-16.}  Read this carefully and follow its instructions to get set up with \textsf{R}, RStudio, Git, and GitHub on your laptop before we meet.}\\
     \\  
-    Aug 31 &    APSA (No class)       \\ 
+    Aug 31 &    APSA (no class)       \\ 
+        \assignment{Before our next meeting, use the interactive \texttt{swirl} package ("Learn \R in \R") to learn (or review) some \R basics.  First, run the following code to get to the \texttt{swirl} interface:
+<<label = swirl, eval = FALSE>>==
+install.packages("swirl")
+library("swirl")
+@
+    Then follow the prompts to the course \texttt{1:~R Programming:~The basics of programming in R} and complete lessons 1 through 9.  (When it asks whether you want Coursera credit, just say no.)
+        }\\
     \\     
     Sept 7 &    Reproducibility  	\\
-		&	RMarkdown, knitr, pandoc, checkpoint, downloads \\     
-    Sept 14 &   Wranglin' Data	\\
-        &   dplyr, tidyr, stringr\\
-    Sept 21 &	Visualization \\
-		&   ggplot, [maps]	\\   		  
+		%	RMarkdown, knitr, pandoc, checkpoint, downloads \\
+	\assignment{ \begin{enumerate}
+	    \item \href{http://www.vox.com/2016/3/14/11219446/psychology-replication-crisis}{Resnick, Brian. 2016. ``What psychology's crisis means for the future of science.'' \emph{Vox}, March 25.}
+    	\item \href{http://happygitwithr.com/rmd-test-drive.html}{Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapter 19.}
+	\end{enumerate}}\\
+	
+
+    Sept 14 &   Visualization \\
+        \assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.} Chapters 1-6.}}
+    Sept 21 &	Wranglin' Data \\
+		\assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.} Chapters 6-12.}}	\\   		  
     Sept 28 &		  \\
     \\      
     Oct 5 &     	Exam \\
@@ -106,24 +119,24 @@ We will work it out.
         			& 			\qquad            \\\\  
      \\     
     Oct 26 &    \\   
-			\readings{} \\
+			\reading{} \\
     \\ 
     Nov 2 &    \\   
-			\readings{} \\
+			\reading{} \\
     Nov 9 &   \\   
-			\readings{} \\
+			\reading{} \\
     \\ 
     Nov 16 &    \\   
-			\readings{} \\
+			\reading{} \\
     \\ 
     Nov 23 &   FALL BREAK \\   
-			\readings{} \\
+			\reading{} \\
     \\ 
     Nov 30 &    \\   
 			 \\
     \\ 
     Dec 7 &    \\   
-			\readings{}\\
+			\reading{}\\
     \\ 
     \\ 
 \end{tabular}    
