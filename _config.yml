@@ -5,7 +5,7 @@ name: Frederick Solt
 author: Frederick Solt
 email: frederick-solt@uiowa.edu
 baseurl: ""
-github_username:  fsolt/cmcr
+github_username:  cmcr-class/cmcr-class.github.io
 
 # Where things are
 source:      .
