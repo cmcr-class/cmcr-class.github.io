@@ -7,3 +7,5 @@
 *.out
 *.tex
 *.sty
+dev/*
+*.Rproj
