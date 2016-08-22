@@ -14,9 +14,13 @@
 
 
 \newenvironment{reading}{& \textbf{Reading:} }{}
-\newenvironment{recommended}{& \textit{Recommended:} }{}
 \newenvironment{assignment}{& \textbf{Assignment:} }{}
+\newenvironment{recommended}{& \textbf{Recommended:} }{}
+
 \newcommand{\R}{\textsf{R}~}
+\definecolor{codegray}{gray}{0.9}
+\newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
+
 
 \begin{document}
 
@@ -55,24 +59,23 @@ To practice your new skills, you will have regular assignments.  Many will be co
 
 
 \subsection{Exam}
-The exam will be held in class on Oct 5.  It will be open-note, open-interwebs---you know, like \href{http://www.theallium.com/engineering/computer-programming-to-be-officially-renamed-googling-stackoverflow/}{IRL}.
+The exam will be held in class on Oct 12.  It will be open-note, open-interwebs---you know, like \href{http://www.theallium.com/engineering/computer-programming-to-be-officially-renamed-googling-stackoverflow/}{IRL}.
 
 
 \subsection{Research Paper}
 The research paper for this course is more straightforward than the usual: the assignment is ``simply'' to write a fully reproducible version of a quantitative research paper you prepared for another class.  
 Ideally the paper will be for a class you are taking this semester, so that you use best practices as you go; you will need to confirm with the instructor of that course that this is acceptable to her or him.  
-Rewriting a promising paper from past coursework will also be fine, though.  If you're stuck for an appropriate paper, talk to me.  
-We will work it out.
+Rewriting a promising paper from past coursework will also be fine, though.  If you're stuck for an appropriate paper, talk to me and we will work it out.
 
 \noindent For your paper, you will:
 
 \begin{itemize}
-\item write using either RMarkdown or \texttt{knitr}, interspercing \R code and text,
+\item write using RMarkdown (or \texttt{knitr}) with intersperced \R code and text,
 \item begin with raw data collection,
 \item include all steps of data cleaning and analysis,
 \item present figures rather than tables,
 \item use Bib\TeX~for citations,
-\item generate PDF, html, and (\raisebox{0.7ex}{ee}\raisebox{0.3ex}{e}w\raisebox{-0.3ex}{www}!) Word versions,
+\item automatically generate PDF, html, and (\raisebox{0.7ex}{ee}\raisebox{0.3ex}{e}w\raisebox{-0.3ex}{ww}\raisebox{-0.7ex}{w}!) Word versions,
 \item do your work in a GitHub repository,
 \item submit a link to that repo.
 \end{itemize}
@@ -80,69 +83,122 @@ We will work it out.
 \noindent Papers are due the last day of exam week, Friday, Dec 16, at 5pm. %date
 
 \section{Class Schedule}
-\begin{tabular}{l p{4.5in}}
+\begin{tabular}{p{.75in} p{4.5in}}
     Aug 24 &    Introduction to the Course\\   
 			\assignment{\href{http://happygitwithr.com}{Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapters 1-16.}  Read this carefully and follow its instructions to get set up with \textsf{R}, RStudio, Git, and GitHub on your laptop before we meet.}\\
     \\  
     Aug 31 &    APSA (no class)       \\ 
-        \assignment{Before our next meeting, use the interactive \texttt{swirl} package ("Learn \R in \R") to learn (or review) some \R basics.  First, run the following code to get to the \texttt{swirl} interface:
+        \assignment{Use the interactive \texttt{swirl} package (``Learn \R in \textsf{R}'') to learn (or review) some \R basics.  First, run the following code to get to the \texttt{swirl} interface:
 <<label = swirl, eval = FALSE>>==
 install.packages("swirl")
 library("swirl")
 @
     Then follow the prompts to the course \texttt{1:~R Programming:~The basics of programming in R} and complete lessons 1 through 9.  (When it asks whether you want Coursera credit, just say no.)
         }\\
-    \\     
-    Sept 7 &    Reproducibility  	\\
-		%	RMarkdown, knitr, pandoc, checkpoint, downloads \\
-	\assignment{ \begin{enumerate}
-	    \item \href{http://www.vox.com/2016/3/14/11219446/psychology-replication-crisis}{Resnick, Brian. 2016. ``What psychology's crisis means for the future of science.'' \emph{Vox}, March 25.}
-    	\item \href{http://happygitwithr.com/rmd-test-drive.html}{Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapter 19.}
-	\end{enumerate}}\\
-	
+\end{tabular}
 
+\begin{tabular}{p{.75in} p{4.25in}}
+    Sept 7 &    The Replication Crisis and Reproducibility	\\
+		%	RMarkdown, bibTeX, checkpoint (knitr, pandoc) \\
+	\reading{ \begin{enumerate}
+    	\item \href{http://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/}{Aschwanden, Christie, and Maggie Koerth-Baker.  2016.  ``How Two Grad Students Uncovered an Apparent Fraud---and a Way to Change Opinions on Transgender Rights.'' \emph{FiveThirtyEight}, April 7}, and \href{http://blogs.lse.ac.uk/impactofsocialsciences/2013/04/24/reinhart-rogoff-revisited-why-we-need-open-data-in-economics/}{Dimitrova, Velichka.  2013.  ``Reinhart-Rogoff Revisited: Coding Errors Happen---Key Problem Was in Not Making the Data Openly Available from the Start.''  \emph{LSE: The Impact Blog}, April 24.}
+    	\item \href{http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=9911378&fulltextType=LT&fileId=S2049847015000448}{Data Access and Research Transparency (DA-RT): A Joint Statement by Political Science Journal Editors.}
+    	\item \href{https://ajps.org/ajps-replication-policy/}{\emph{AJPS} Replication and Verification Policy} and \href{https://ajpsblogging.files.wordpress.com/2015/03/ajps-guide-for-replic-materials-1-0.pdf}{Jacoby, William G.  2015.  ``\emph{American Journal of Political Science}: Guidelines for Preparing Replication Files.''}
+    	\item \href{http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf}{Gelman, Andrew, and Eric Loken.  2013.  ``The Garden of Forking Paths: Why Multiple Comparisons Can Be a Problem, Even When There Is No `Fishing Expedition' or \mbox{`$p$-Hacking'} and the Research Hypothesis Was Posited Ahead of Time.''}
+    	\item \href{http://www.pnas.org.proxy.lib.uiowa.edu/content/112/6/1645}{Leek, Jeffrey T., and Roger D. Peng. 2015.  ``Opinion: Reproducibile Research Can Still Be Wrong: Adopting a Prevention Approach.'' \emph{Proceedings of the National Academy of Sciences} 112(6):1645-1646} and \href{http://biorxiv.org/content/biorxiv/early/2016/07/29/066803.full.pdf}{Patil, Prasad, Roger D. Peng, and Jeffrey T. Leek.  2016.  ``A Statistical Definition for Reproducibility and Replicability.''  \emph{bioRxiv}, July 29.}
+    	
+	\end{enumerate}}\\
+	\assignment{\href{http://happygitwithr.com/rmd-test-drive.html}{Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapter 19.} }\\
+	\\
+	\recommended{ \begin{enumerate}
+	    \item \href{http://www.vox.com/2016/3/14/11219446/psychology-replication-crisis}{Resnick, Brian. 2016. ``What Psychology's Crisis Means for the Future of Science.'' \emph{Vox}, March 25.}
+	    \item \href{http://rmarkdown.rstudio.com/articles.html}{RStudio's RMarkdown Reference Library.}
+    	\item \href{http://rmarkdown.rstudio.com/articles_docx.html}{Layton, Richard. 2015. ``Happy Collaboration with Rmd to docx.''}
+	\end{enumerate}}\\
+	\\
+\end{tabular}
+
+\pagebreak
+\begin{tabular}{p{.75in} p{4.25in}}
     Sept 14 &   Visualization \\
-        \assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.} Chapters 1-6.}}
+    % https://github.com/jennybc/ggplot2-tutorial
+        \assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Introductory chapters ``Welcome'' and ``Introduction,'' plus the section ``Explore'' (currently chapters 2-8, but the book is still in progress, so that might change).}\\
+        \\
+        \recommended{\begin{enumerate}
+    	\item \href{http://www.cookbook-r.com/Graphs/}{Chang, Winston. \emph{Cookbook for R}.  Chapter 8: Graphs.}  I~refer to this all the time.
+    	\item \href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S1537592707072209}{Kastellec, Jonathan P. and Eduardo L. Leoni. 2007. ``Using Graphs Instead of Tables in Political Science. \emph{Perspectives on Politics} 5(4):755--771.}
+    	\item \href{http://CRAN.R-project.org/package=dotwhisker}{Solt, Frederick, and Yue Hu.  2015.  \texttt{dotwhisker}: Dot-and-Whisker Plots of Regression Results.  Available at The Comprehensive R Archive Network (CRAN).}  Check out \href{https://cran.r-project.org/web/packages/dotwhisker/vignettes/kl2007_examples.html}{how to remake the examples from Kastellec and Leoni (2007)}!
+        \end{enumerate}
+        }
+    \\    
     Sept 21 &	Wranglin' Data \\
-		\assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.} Chapters 6-12.}}	\\   		  
-    Sept 28 &		  \\
+		\assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Section ``Wrangle'' (currently chapters 9-16).}\\
+	    \\
+		\recommended{\href{https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf}{RStudio's Data Wrangling Cheat Sheet.}  There are also \href{https://www.rstudio.com/resources/cheatsheets/}{other cheat sheets} that you may find useful.}\\
+  	\\	  
+    Sept 28 &   Programming	  \\
+    	\assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Section ``Program'' (currently chapters 17-21).}\\
     \\      
-    Oct 5 &     	Exam \\
-    				&	\\
-				\\ 
-    Oct 12 &		  \\
-         			        \\
 \end{tabular} 
-\begin{tabular}{l p{4.5in}}
+\begin{tabular}{p{.75in} p{4.25in}}
+    Oct 5 &     Scraping (and Managing) Data \\
+    % http://blog.revolutionanalytics.com/2016/08/r-packages-data-access.html
+        \reading{\begin{enumerate}
+        \item \href{https://rawgit.com/Reproducible-Science-Curriculum/rr-organization1/master/organization-01-slides.html}{Bryan, Jennifer. ``Organization I: File Naming.''}
+        \item \href{https://politicalsciencereplication.wordpress.com/2015/03/16/good-practice-in-data-collection-and-storing/}{Janz, Nicole. 2015. ``Good Practice in Data Collection and Storing.'' \emph{Political Science Replication}, March 16.}
+        \item \href{http://varianceexplained.org/r/trump-tweets/}{Robinson, David.  2016.  ``Text Analysis of Trump's Tweets Confirms He Writes Only the (Angrier) Android Half.'' \emph{Variance Explained}, August 9.}
+        \item \href{https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/}{RStudio.  2014.  ``\texttt{rvest}: Easy Web Scraping with R.''  \emph{RStudio Blog}, November 24.}
+        \end{enumerate}
+        }\\
+    	\assignment{\begin{enumerate}
+	    \item Install the \href{http://selectorgadget.com}{SelectorGadget Chrome extension} (of course, you will need to install the \href{https://www.google.com/chrome/}{Chrome} browser first if you don't already have it), and while you're at the SelectorGadget website, watch the 96-second video on how to use it.
+	    \item Look at \href{https://www.tripadvisor.com/Hotel_Review-g37209-d1762915-Reviews-JW_Marriott_Indianapolis-Indianapolis_Indiana.html}{the reviews of the Indianapolis JW Marriott on TripAdvisor}, and then run the \texttt{rvest} demo:
+<<label = rvest, eval = FALSE>>==
+install.packages("rvest")
+library("rvest")
+
+demo(tripadvisor, package = "rvest")
+@
+	    \end{enumerate}
+	    }	\\
+    Oct 12 &	Exam  \\
     \\     
-    Oct 19 &		 \\
-        			& 			\qquad            \\\\  
-     \\     
-    Oct 26 &    \\   
-			\reading{} \\
+    Oct 19 &	Crowdsourcing Cross-National Data	 \\
+        \reading{\href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055416000058}{Benoit, Kenneth, Drew Conway, Benjamin E. Lauderdale, Michael Laver, and Slava Mikhaylov. 2016. ``Crowd-sourced Text Analysis: Reproducible and Agile Production of Political Data.'' \emph{American Political Science Review} 110(2):278-295.}}\\
+\end{tabular}
+\begin{tabular}{p{.75in} p{4.25in}}
+    Oct 26 &    Multilevel Models of Multiple Surveys I \\   
+			\reading{\href{http://www.jstor.org.proxy.lib.uiowa.edu/stable/25193796}{Solt, Frederick.  2008.  ``Economic Inequality and Democratic Political Engagement.''  \emph{American Journal of Political Science} 52(1):48-60.}} \\
     \\ 
-    Nov 2 &    \\   
-			\reading{} \\
-    Nov 9 &   \\   
-			\reading{} \\
+    Nov 2 &    Multilevel Models of Multiple Surveys II \\ 
+    % https://rpubs.com/kaz_yos/stan-multi-2
+			\assignment{Install RStan following the instructions in \href{https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started}{RStan: Getting Started}.}\\
+	\\		
+    Nov 9 &     Estimating Cross-National Latent Variables\\   
+			\reading{ \begin{enumerate}
+		\item \href{http://pan.oxfordjournals.org.proxy.lib.uiowa.edu/content/18/4/426}{Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2010. ``Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.'' \emph{Political Analysis} 18(4):426-449.
+}
+	    \item \href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055414000070}{Fariss, Christopher~J. 2014. ``Respect for Human Rights Has Improved Over Time: Modeling the Changing Standard of Accountability.'' \emph{American Political Science Review} 108(2):297-318.}
+	    \item \href{http://www.journals.uchicago.edu.proxy.lib.uiowa.edu/doi/10.1086/682150}{Linzer, Drew A., and Jeffrey~K. Staton. 2015. ``A Global Measure of Judicial Independence, 1948-2012.'' \emph{Journal of Law and Courts} 3(2):223-256.}
+
+
+	\end{enumerate}} \\
     \\ 
-    Nov 16 &    \\   
-			\reading{} \\
-    \\ 
+    Nov 16 &   Analysis with Cross-National Latent Variables \\   
+			\reading{\href{http://rap.sagepub.com/content/2/3/2053168015605343}{Crabtree, Charles~D., and Fariss, Christopher~J. 2015.  ``Uncovering Patterns Among Latent Variables: Human Rights~and De Facto Judicial Independence.'' \emph{Research \& Politics} 2(3):1-9.}} \\ \\
+			\assignment{\href{http://www.unified-democracy-scores.org/example.html}{Pemstein, Meserve, and Melton provide an example} of how use Stata to employ their Unified Democracy Scores in research.  Replicate their example but show instead how to use the UDS in \textsf{R}.  You \emph{might} find \href{http://dx.doi.org/10.7910/DVN/LVYOKM}{Crabtree and Fariss's reproducibility materials} to be a bit helpful, but you should of course use the tidyverse methods we've learned this semester.}\\
+\end{tabular}
+\begin{tabular}{p{.75in} p{4.25in}} 
     Nov 23 &   FALL BREAK \\   
-			\reading{} \\
-    \\ 
-    Nov 30 &    \\   
 			 \\
+    Nov 30 &    Public Opinion in One Country as a Latent Variable\\   
+			\reading{\href{http://pan.oxfordjournals.org.proxy.lib.uiowa.edu/content/22/1/115.abstract}{McGann, Anthony J. 2014. ``Estimating the Political Center from Aggregate Data: An Item Response Theory Alternative to the Stimson Dyad Ratios Algorithm.'' \emph{Political Analysis} 22(1):115-129.}} \\
     \\ 
-    Dec 7 &    \\   
-			\reading{}\\
+    Dec 7 &    Public Opinion as a Cross-National Latent Variable\\   
     \\ 
     \\ 
 \end{tabular}    
 
-
-\newpage
 \section{Further Course Information}
 The following CLAS policy and procedural statements have been summarized from the web pages of the \href{http://clas.uiowa.edu}{College of Liberal Arts and Sciences} and \href{http://www.uiowa.edu/~our/opmanual/index.html}{\emph{The University of Iowa Operations Manual}}.
 
