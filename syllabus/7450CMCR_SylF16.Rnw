@@ -113,6 +113,7 @@ library("swirl")
 	\recommended{ \begin{enumerate}
 	    \item \href{http://www.vox.com/2016/3/14/11219446/psychology-replication-crisis}{Resnick, Brian. 2016. ``What Psychology's Crisis Means for the Future of Science.'' \emph{Vox}, March 25.}
 	    \item \href{http://rmarkdown.rstudio.com/articles.html}{RStudio's RMarkdown Reference Library.}
+	    \item \href{http://kbroman.org/knitr_knutshell/}{Broman, Karl.  \emph{\texttt{knitr} in a knutshell: A Minimal Tutorial}.}
     	\item \href{http://rmarkdown.rstudio.com/articles_docx.html}{Layton, Richard. 2015. ``Happy Collaboration with Rmd to docx.''}
 	\end{enumerate}}\\
 	\\
