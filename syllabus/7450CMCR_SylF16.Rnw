@@ -144,6 +144,7 @@ library("swirl")
 \begin{tabular}{p{.75in} p{4.25in}}
     Oct 5 &     Scraping (and Managing) Data \\
     % http://blog.revolutionanalytics.com/2016/08/r-packages-data-access.html
+    % stringr, regex
         \reading{\begin{enumerate}
         \item \href{https://rawgit.com/Reproducible-Science-Curriculum/rr-organization1/master/organization-01-slides.html}{Bryan, Jennifer. ``Organization I: File Naming.''}
         \item \href{https://politicalsciencereplication.wordpress.com/2015/03/16/good-practice-in-data-collection-and-storing/}{Janz, Nicole. 2015. ``Good Practice in Data Collection and Storing.'' \emph{Political Science Replication}, March 16.}
@@ -160,6 +161,7 @@ library("rvest")
 
 demo(tripadvisor, package = "rvest")
 @
+        \item \href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Section ``Communicate'' (currently chapters 26-30).
 	    \end{enumerate}
 	    }	\\
     Oct 12 &	Exam  \\
