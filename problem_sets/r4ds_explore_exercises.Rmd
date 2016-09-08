@@ -382,7 +382,7 @@ library(tibble)
 
 1.  What does `na.rm = TRUE` do in `mean()` and `sum()`?
 
-#### 7.5.1.1 Exercises
+### 7.5.1.1 Exercises
 
 1.  Use what you've learned to improve the visualisation of the departure times
     of cancelled vs. non-cancelled flights.
@@ -411,7 +411,7 @@ library(tibble)
     The ggbeeswarm package provides a number of methods similar to 
     `geom_jitter()`. List them and briefly describe what each one does.
     
-#### 7.5.2.1 Exercises
+### 7.5.2.1 Exercises
 
 1.  How could you rescale the count dataset above to more clearly show
     the distribution of cut within colour, or colour within cut?
@@ -423,7 +423,7 @@ library(tibble)
 1.  Why is it slightly better to use `aes(x = color, y = cut)` rather
     than `aes(x = cut, y = color)` in the example above?
 
-#### 7.5.3.1 Exercises
+### 7.5.3.1 Exercises
 
 1.  Instead of summarising the conditional distribution with a boxplot, you
     could use a frequency polygon. What do you need to consider when using
