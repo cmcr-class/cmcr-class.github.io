@@ -114,7 +114,7 @@ library("swirl")
 	    \item \href{http://www.vox.com/2016/3/14/11219446/psychology-replication-crisis}{Resnick, Brian. 2016. ``What Psychology's Crisis Means for the Future of Science.'' \emph{Vox}, March 25.}
 	    \item \href{http://rmarkdown.rstudio.com/articles.html}{RStudio's RMarkdown Reference Library.}
 	    \item \href{http://kbroman.org/knitr_knutshell/}{Broman, Karl.  \emph{\texttt{knitr} in a knutshell: A Minimal Tutorial}.}
-    	\item \href{http://rmarkdown.rstudio.com/articles_docx.html}{Layton, Richard. 2015. ``Happy Collaboration with Rmd to docx.''}
+    	\item Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.} \href{http://r4ds.had.co.nz/r-markdown.html}{Chapter 27: R~Markdown}, \href{http://r4ds.had.co.nz/r-markdown-formats.html}{Chapter 29: R~Markdown Formats}, and \href{http://r4ds.had.co.nz/r-markdown-workflow.html}{Chapter 30: R~Markdown Workflow}.
 	\end{enumerate}}\\
 	\\
 \end{tabular}
@@ -123,28 +123,45 @@ library("swirl")
 \begin{tabular}{p{.75in} p{4.25in}}
     Sept 14 &   Visualization \\
     % https://github.com/jennybc/ggplot2-tutorial
-        \assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Introductory chapters ``Welcome'' and ``Introduction,'' plus the section ``Explore'' (currently chapters 2-8, but the book is still in progress, so that might change).}\\
-        \\
+        \reading{\begin{enumerate}
+    	\item Basics.  \href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science}, chapters 1-4, 6, 8.}
+    	\item Presentation Graphics. Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science}, \href{http://r4ds.had.co.nz/graphics-for-communication.html}{chapter 28: Graphics for Communication.}
+    	\end{enumerate}
+    	}\\
         \recommended{\begin{enumerate}
-    	\item \href{http://www.cookbook-r.com/Graphs/}{Chang, Winston. \emph{Cookbook for R}.  Chapter 8: Graphs.}  I~refer to this all the time.
+        \item \href{http://www.cookbook-r.com/Graphs/}{Chang, Winston. \emph{Cookbook for R}.  Chapter 8: Graphs.}  Skim a couple chapters to get a feel for this as a resource. I~refer to it all.~the.~time.
     	\item \href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S1537592707072209}{Kastellec, Jonathan P. and Eduardo L. Leoni. 2007. ``Using Graphs Instead of Tables in Political Science. \emph{Perspectives on Politics} 5(4):755--771.}
     	\item \href{http://CRAN.R-project.org/package=dotwhisker}{Solt, Frederick, and Yue Hu.  2015.  \texttt{dotwhisker}: Dot-and-Whisker Plots of Regression Results.  Available at The Comprehensive R Archive Network (CRAN).}  Check out \href{https://cran.r-project.org/web/packages/dotwhisker/vignettes/kl2007_examples.html}{how to remake the examples from Kastellec and Leoni (2007)}!
         \end{enumerate}
         }
     \\    
     Sept 21 &	Wranglin' Data \\
-		\assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Section ``Wrangle'' (currently chapters 9-16).}\\
+		\reading{\begin{enumerate}
+		\item Importing Data. \href{https://cran.r-project.org/web/packages/rio/vignettes/rio.html}{Leeper, Thomas J. 2016. ``\texttt{rio}: A Swiss-Army Knife for Data I/O. Import, Export, and Convert Data Files.''}
+		\item Tidying Data. \href{http://r4ds.had.co.nz/tidy-data.html}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science,} chapter 12: Tidy Data.}
+        \item Manipulating Data. \href{http://r4ds.had.co.nz/tidy-data.html}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science,} chapter 5: Data Transformation.}
+        \end{enumerate}
+		}
 	    \\
 		\recommended{\href{https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf}{RStudio's Data Wrangling Cheat Sheet.}  There are also \href{https://www.rstudio.com/resources/cheatsheets/}{other cheat sheets} that you may find useful.}\\
+		\\
+		\assignment{Exercises from \textit{R for Data Science}, Chapter 3.}
   	\\	  
-    Sept 28 &   Programming	  \\
-    	\assignment{\href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Section ``Program'' (currently chapters 17-21).}\\
-    \\      
 \end{tabular} 
 \begin{tabular}{p{.75in} p{4.25in}}
-    Oct 5 &     Scraping (and Managing) Data \\
+    Sept 28 &   Wranglin' Data II: Working with Text	  \\
+    	\reading{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R~for Data Science}, \href{http://r4ds.had.co.nz/strings.html}{Chapter 14: Strings} and \href{http://r4ds.had.co.nz/factors.html}{Chapter 15: Factors.}}\\
+    	\\
+    	\assignment{Exercises from \textit{R for Data Science}, Chapters 5 and 12.}\\
+    \\      
+    Oct 5 &     Programming \\
+        \reading{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R~for Data Science}, \href{http://r4ds.had.co.nz/functions.html}{Chapter 19: Functions} and \href{http://r4ds.had.co.nz/iteration.html}{Chapter 21: Iteration.}}\\
+        \\
+    	\assignment{Exercises from \textit{R for Data Science}, Chapters 14 and 15.}\\
+\end{tabular} 
+\begin{tabular}{p{.75in} p{4.25in}}
+    Oct 12 &     Scraping (and Managing) Data \\
     % http://blog.revolutionanalytics.com/2016/08/r-packages-data-access.html
-    % stringr, regex
         \reading{\begin{enumerate}
         \item \href{https://rawgit.com/Reproducible-Science-Curriculum/rr-organization1/master/organization-01-slides.html}{Bryan, Jennifer. ``Organization I: File Naming.''}
         \item \href{https://politicalsciencereplication.wordpress.com/2015/03/16/good-practice-in-data-collection-and-storing/}{Janz, Nicole. 2015. ``Good Practice in Data Collection and Storing.'' \emph{Political Science Replication}, March 16.}
@@ -161,13 +178,14 @@ library("rvest")
 
 demo(tripadvisor, package = "rvest")
 @
-        \item \href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  \textit{R for Data Science.}} Section ``Communicate'' (currently chapters 26-30).
+        \item Exercises from \textit{R for Data Science}, Chapters 19 and 21.
 	    \end{enumerate}
-	    }	\\
-    Oct 12 &	Exam  \\
-    \\     
+	    }
+\\
     Oct 19 &	Crowdsourcing Cross-National Data	 \\
         \reading{\href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055416000058}{Benoit, Kenneth, Drew Conway, Benjamin E. Lauderdale, Michael Laver, and Slava Mikhaylov. 2016. ``Crowd-sourced Text Analysis: Reproducible and Agile Production of Political Data.'' \emph{American Political Science Review} 110(2):278-295.}}\\
+        \\
+        \assignment{Take-home exam. Open book, open notes: don't click the GitHub invitation link until you have three hours to spend completing the exam.}
 \end{tabular}
 \begin{tabular}{p{.75in} p{4.25in}}
     Oct 26 &    Multilevel Models of Multiple Surveys I \\   
@@ -189,7 +207,7 @@ demo(tripadvisor, package = "rvest")
     \\ 
     Nov 16 &   Analysis with Cross-National Latent Variables \\   
 			\reading{\href{http://rap.sagepub.com/content/2/3/2053168015605343}{Crabtree, Charles~D., and Fariss, Christopher~J. 2015.  ``Uncovering Patterns Among Latent Variables: Human Rights~and De Facto Judicial Independence.'' \emph{Research \& Politics} 2(3):1-9.}} \\ \\
-			\assignment{\href{http://www.unified-democracy-scores.org/example.html}{Pemstein, Meserve, and Melton provide an example} of how use Stata to employ their Unified Democracy Scores in research.  Replicate their example but show instead how to use the UDS in \textsf{R}.  You \emph{might} find \href{http://dx.doi.org/10.7910/DVN/LVYOKM}{Crabtree and Fariss's reproducibility materials} to be a bit helpful, but you should of course use the tidyverse methods we've learned this semester.}\\
+			\assignment{\href{http://www.unified-democracy-scores.org/example.html}{Pemstein, Meserve, and Melton provide an example} of how use Stata to employ their Unified Democracy Scores in research.  Replicate their example but show instead how to use the UDS in \textsf{R}.  You \emph{might} find \href{http://dx.doi.org/10.7910/DVN/LVYOKM}{Crabtree and Fariss's reproducibility materials} to be a bit helpful, but you should of course use the \texttt{tidyverse} methods we've learned this semester.}\\
 \end{tabular}
 \begin{tabular}{p{.75in} p{4.25in}} 
     Nov 23 &   FALL BREAK \\   
