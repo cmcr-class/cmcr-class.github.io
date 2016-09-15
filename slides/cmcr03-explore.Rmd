@@ -52,19 +52,19 @@ describing how variables in the data are mapped to aesthetic attributes
 
 - `geoms`: Geometric objects that represent what you actually see on
 the plot
-  + points
-  + lines
-  + polygons
-  + bars
+    + points
+    + lines
+    + polygons
+    + bars
 
 ## Grammar of Graphics
 
 **Elements**
 
 - `stats`: Statistics transformations
-  + binning and counting observations to create a histogram,
-  + summarising a 2d relationship with a linear model
-  + `stats` are optional
+    + binning and counting observations to create a histogram,
+    + summarising a 2d relationship with a linear model
+    + `stats` are optional
 
 
 ## Grammar of Graphics
@@ -112,7 +112,8 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 ## Data transformation, quick and dirty
 ```{r}
-ggplot(gapminder, aes(x = log10(gdpPercap), y = lifeExp)) + geom_point()
+ggplot(gapminder, aes(x = log10(gdpPercap), y = lifeExp)) +
+    geom_point()
 ```
 
 ## Data transformation
