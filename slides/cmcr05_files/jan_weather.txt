@@ -1,0 +1,22 @@
+January
+
+Sunday 1
+Sunny
+
+Monday 2
+Sunny
+
+Tuesday 3
+Rainy
+
+Wednesday 4
+Rainy
+
+Thursday 5
+Sunny
+
+Friday 6
+Sunny
+
+Saturday 7
+Rainy
