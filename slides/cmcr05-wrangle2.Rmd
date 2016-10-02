@@ -276,6 +276,27 @@ str_extract(days, ".[aeiou]") # any character & then a lowercase vowel
 str_extract(days, ".[^aeiou]") # any character & then one NOT a lc vowel
 ```
 
+## Regular Expressions: Character Classes
+```{r}
+str_extract(c("hi", "324"), "\\d+") # \\d: digit
+
+str_extract(days, "\\D") # \\D: not a digit
+
+# \\w: 'word' [A-Za-z0-9_]; \\W: not word
+str_detect(c("123", "abc", ", "), "\\W") 
+```
+
+## Regular Expressions: Character Classes
+```{r}
+# \\b: boundary
+str_detect(c("dog", "dog is good", 
+             "dogs are bad", "doggy is bad too"), "dog\\b") 
+
+# \\s: whitespace
+str_detect(c("dog", "dog is good", 
+             "dogs are bad", "doggy is bad too"), "\\s") 
+```
+
 ## Regular Expressions: Capture Groups
 
 - Parentheses remember the match within them to use later
@@ -354,18 +375,21 @@ day_pattern <- str_c(days, collapse = "|")
 
 weather_df <- weather %>% 
     data_frame(text = .,
-               day_date = ifelse(str_detect(text, day_pattern),
+               day_date = if_else(str_detect(text, day_pattern),
                                  text,
                                  NA_character_)) %>% 
     filter(!(str_detect(text, "^\\s*$")))
-
 weather_df
 ```
 
+## Regular Expressions: An Example
+
 ```{r}
 weather_df <- weather_df %>% 
-    zoo::na.locf() %>% 
+    zoo::na.locf() %>%      # na <- "last observation carried forward"
     filter(text!=day_date) %>% 
     separate(day_date, into = c("day", "date"), sep = " ")
+weather_df
 ```
+
 
