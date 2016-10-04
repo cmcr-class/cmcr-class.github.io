@@ -386,7 +386,7 @@ weather_df
 
 ```{r}
 weather_df <- weather_df %>% 
-    zoo::na.locf() %>%      # na <- "last observation carried forward"
+    fill(day_date) %>%      # from tidyr: fills na with last observed value
     filter(text!=day_date) %>% 
     separate(day_date, into = c("day", "date"), sep = " ")
 weather_df
