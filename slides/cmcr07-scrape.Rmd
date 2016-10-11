@@ -1,0 +1,77 @@
+---
+title: "Scraping and<br/> Managing Data"
+author: "Frederick Solt"
+date: "October 28, 2016"
+output: 
+    ioslides_presentation:
+    widescreen: true
+---
+
+```{r setup, include=FALSE}
+options(width=60)
+```
+
+Scraping and<br/> Managing Data
+===
+
+## Filenames
+
+Take Jenny Bryan's advice to make sure your filenames:
+
+0. are machine readable
+    - and so are easy to search, filter, regex 
+
+0. are human readable
+    - and so are easy to figure out
+
+0. play well with default ordering
+    - put something numeric first
+
+    - use the ISO 8601 standard for dates
+
+    - left pad other numbers with zeros
+    
+>- BUT: leave the names of stuff you download alone
+
+## Directory Structure
+
+0. All files for a project should reside in a single directory (folder)
+
+0. All project folders should be in a single directory, too (e.g., "projects")
+
+0. This goes for everything else, btw
+    - One for all teaching, with one folder for each class
+        - prefixed with course number: "1400_intro-to-comparative"
+        - with subdirs for each semester, slides, lectures, etc.
+
+## Directory Structure
+
+0. All files for a project should reside in a single directory (folder)
+
+0. All project folders should be in a single directory, too (e.g., "projects")
+
+0. This goes for everything else, btw
+    - One for all reviewing
+        - with a folder for each journal, and one for each ms 
+        <p style="text-align:center"><img src="cmcr07_files/reviews.png" style="width: 600px;" align="center"/></p>
+
+## Directory Structure
+
+0. All files for a project should reside in a single directory (folder)
+
+0. All project folders should be in a single directory, too (e.g., "projects")
+
+0. This goes for everything else, btw
+    - One for all service
+        - with a folder for each committee
+    
+    - and so on . . .
+
+## Scraping with `rvest`
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+
