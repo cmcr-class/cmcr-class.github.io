@@ -364,7 +364,8 @@ walk2(report_numbers, report_names, function(number, name) {
     # if file doesn't exist
     if (!file.exists(str_c("data-raw/files/", name, ".pdf"))) { 
         # get the link to it
-        doc <- str_c("http://www.protestas.iis.ucr.ac.cr/publicaciones/", number) %>%
+        doc <- str_c("http://www.protestas.iis.ucr.ac.cr/publicaciones/",
+                     number) %>%
             read_html() %>% 
             html_node(":nth-child(6) .col-md-12") %>% 
             str_extract('\\/system[^\\"]+') %>% 
