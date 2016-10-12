@@ -375,3 +375,11 @@ walk2(report_numbers, report_names, function(number, name) {
     }
 })
 ```
+
+## Scraping Files: An Example
+
+And finally, download all reports as PDF files
+
+```{r}
+list.files("data-raw/files/")
+```
