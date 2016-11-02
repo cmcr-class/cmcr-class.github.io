@@ -174,9 +174,7 @@ Not okay:
 ## 3. Combine Surveys
 
 ```{r, eval=FALSE}
-ds1 <- read_csv("~/Documents/Projects/engagement/data-raw/datasets_table1.csv") %>% 
-    select(-disc3) %>% 
-    filter(!is.na(int4))
+ds1 <- read_csv("~/Documents/Projects/engagement/data-raw/datasets_table1.csv") 
 
 l1_data_all <- mlm_setup(datasets_table = ds1,
                          dep_var = "int4",
