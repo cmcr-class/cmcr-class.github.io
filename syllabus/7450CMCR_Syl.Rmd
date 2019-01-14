@@ -174,6 +174,7 @@ library("swirl")
 1. [Solt, Frederick.  2008.  "Economic Inequality and Democratic Political Engagement."  *American Journal of Political Science* 52(1):48-60.](http://www.jstor.org.proxy.lib.uiowa.edu/stable/25193796)
 1. [Solt, Frederick, Yue Hu, Kevan Hudson, Jungmin Song, and Dong ‘Erico’ Yu. 2017. “Economic Inequality and Class Consciousness.” *Journal of Politics* 79(3):1079-1083.](https://www-journals-uchicago-edu.proxy.lib.uiowa.edu/doi/pdfplus/10.1086/690971)  Yes, *again*, but this time, work through [the replication code](https://github.com/fsolt/class_consciousness/blob/master/paper/class_consciousness.Rnw).
 
+
 ## `r meeting_headers[9]`: Multilevel Models of Multiple Surveys II
 *Readings*:
 
