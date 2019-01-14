@@ -20,7 +20,7 @@ classhours: "T 11:00 am to 1:50 pm"
 ---
 
 ```{r include = FALSE}
-library(dplyr)
+library(tidyverse)
 library(lubridate)
 ```
 
@@ -34,26 +34,25 @@ meeting_headers <- paste0("Week ", 1:16, ", ", months(meetings), " ", day(meetin
 ```
 
 
-## Overview
+# Overview
 In this course, you will learn to identify common methodological issues encountered in quantitative comparative research and to address them using computational techniques.  Topics covered include data wrangling, exploration, and analysis (i.e., `data science'); Bayesian estimation of latent variables such as democracy, judicial independence, and respect for human rights across countries and over time; and computational approaches to the study to the dynamics of public opinion both within and across countries. This course is cross-listed in Comparative Politics and Methodology; it may be used to meet requirements in either subfield (but not both).
 
-## Course Requirements
-Your grade will be based on class participation (25%), assignments (25%), an exam (25%), and a research paper (25%).  The following grades may be assigned at the end of the class: A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F.
+# Course Requirements
+Your grade will be based on class participation (20%), assignments (10%), an exam (25%), a research presentation (20%), and a research paper (25%).  The following grades may be assigned at the end of the class: A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F.
 
-### Class Participation
+## Class Participation
 By this point in your career this should really go without saying, but here it is anyway: you can't learn in a class if you don't show up.  You should attend every meeting having completed the readings and assignments, that is, you should be ready to discuss use cases, ask good questions, and share any difficulties you've encountered.  
 
 We will also be using [the Issues tab of a dedicated GitHub repository](https://github.com/cmcr-class/Discussion/issues) to continue our discussions outside of class. To start a new thread, create a new issue. If you want to be sure to get the attention of someone in particular, use their GitHub handle---mine is \texttt{@fsolt}---to tag them in your post: GitHub sends an email to people when they are tagged.
 
-### Assignments
-To practice your new skills, you will have regular assignments.  Many will be completed through GitHub in a private repository for each student (besides you, only I will have access to your homework repo).
+## Assignments
+To practice your new skills, you will have regular assignments.  Some will be completed through GitHub in a private repository for each student (besides you, only I will have access to your homework repo). Others will be DataCamp short courses.  Others still will simply be readings that I want you to be sure to step through the embedded code.  All will be graded on a pass (that is, substantially completed)/fail basis.
 
-### Exam
-The exam will be held in class on Oct 12.  It will be open-note, open-interwebs---you know, like [IRL](http://www.theallium.com/engineering/computer-programming-to-be-officially-renamed-googling-stackoverflow/).
+## Exam
+The exam will be available for your to take anytime after class on `r str_replace(meeting_headers[9], ".*, ", "")` until the start of class on `r str_replace(meeting_headers[11], ".*, ", "")`.  It will be open-note, open-interwebs---you know, just like [IRL](http://www.theallium.com/engineering/computer-programming-to-be-officially-renamed-googling-stackoverflow/).  Don't click the GitHub invitation link until you have three hours to spend completing the exam.
 
-
-### Research Paper
-The research paper for this course is more straightforward than the usual: the assignment is ``simply'' to write a fully reproducible version of a quantitative research paper you prepared for another class.  Ideally the paper will be for a class you are taking this semester, so that you use best practices as you go; you will need to confirm with the instructor of that course that this is acceptable to her or him.  Rewriting a promising paper from past coursework will also be fine, though.  If you're stuck for an appropriate paper, talk to me and we will work it out.
+## Research Paper
+The research paper for this course is more straightforward than the usual: the assignment is "simply" to write a fully reproducible version of a quantitative research paper you prepared for another class.  Ideally the paper will be for a class you are taking this semester, so that you use best practices as you go; you will need to confirm with the instructor of that course that this is acceptable to her or him.  Rewriting a promising paper from past coursework will also be fine, though.  If you're stuck for an appropriate paper, talk to me and we will work it out.
 
 For your paper, you will:
 
@@ -68,118 +67,200 @@ For your paper, you will:
 
 Papers are due the last day of exam week, Friday, May 10, before midnight. 
 
+## Research Presentation
+In our last class meeting, you will give a presentation based on your research paper to the class as if at an academic conference.  You will speak for 12 to 15 minutes.  You will have slides; these slides will not be filled with blocks of text.  You will use plots, not tables, to present results.  You will rock this.
+
+\pagebreak
+# Course Schedule
+
 ## `r meeting_headers[1]`: Introduction to the Course
-*Assignment*: [Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapters 1-16.](http://happygitwithr.com)  Read this carefully and follow its instructions to get set up with \textsf{R}, RStudio, Git, and GitHub on your laptop before we meet.
+*Assignment*: 
+
+1. [Bryan, Jennifer. 2016. \textit{Happy Git and GitHub for the UseR.} Chapters 1-16.](http://happygitwithr.com)  Read this carefully and follow its instructions to get set up with \textsf{R}, RStudio, Git, and GitHub on your laptop before we meet.
+
 
 ## `r meeting_headers[2]`: The Replication Crisis and Reproducibility
 *Readings*: 
 
-1. \href{http://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/}{Aschwanden, Christie, and Maggie Koerth-Baker.  2016.  ``How Two Grad Students Uncovered an Apparent Fraud---and a Way to Change Opinions on Transgender Rights.'' \emph{FiveThirtyEight}, April 7}, and \href{http://blogs.lse.ac.uk/impactofsocialsciences/2013/04/24/reinhart-rogoff-revisited-why-we-need-open-data-in-economics/}{Dimitrova, Velichka.  2013.  ``Reinhart-Rogoff Revisited: Coding Errors Happen---Key Problem Was in Not Making the Data Openly Available from the Start.''  \emph{LSE: The Impact Blog}, April 24.}
-1. \href{http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=9911378&fulltextType=LT&fileId=S2049847015000448}{Data Access and Research Transparency (DA-RT): A Joint Statement by Political Science Journal Editors.}
-1. \href{https://ajps.org/ajps-replication-policy/}{\emph{AJPS} Replication and Verification Policy} and \href{https://ajpsblogging.files.wordpress.com/2015/03/ajps-guide-for-replic-materials-1-0.pdf}{Jacoby, William G.  2015.  ``\emph{American Journal of Political Science}: Guidelines for Preparing Replication Files.''}
-1. \href{http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf}{Gelman, Andrew, and Eric Loken.  2013.  ``The Garden of Forking Paths: Why Multiple Comparisons Can Be a Problem, Even When There Is No `Fishing Expedition' or \mbox{`$p$-Hacking'} and the Research Hypothesis Was Posited Ahead of Time.''}
-1. \href{http://www.pnas.org.proxy.lib.uiowa.edu/content/112/6/1645}{Leek, Jeffrey T., and Roger D. Peng. 2015.  ``Opinion: Reproducibile Research Can Still Be Wrong: Adopting a Prevention Approach.'' \emph{Proceedings of the National Academy of Sciences} 112(6):1645-1646} and \href{http://biorxiv.org/content/biorxiv/early/2016/07/29/066803.full.pdf}{Patil, Prasad, Roger D. Peng, and Jeffrey T. Leek.  2016.  ``A Statistical Definition for Reproducibility and Replicability.''  \emph{bioRxiv}, July 29.}
+1. [Aschwanden, Christie, and Maggie Koerth-Baker.  2016.  "How Two Grad Students Uncovered an Apparent Fraud---and a Way to Change Opinions on Transgender Rights." *FiveThirtyEight*, April 7 ](http://fivethirtyeight.com/features/how-two-grad-students-uncovered-michael-lacour-fraud-and-a-way-to-change-opinions-on-transgender-rights/), and [Dimitrova, Velichka.  2013.  "Reinhart-Rogoff Revisited: Coding Errors Happen---Key Problem Was in Not Making the Data Openly Available from the Start."  *LSE: The Impact Blog*, April 24.](http://blogs.lse.ac.uk/impactofsocialsciences/2013/04/24/reinhart-rogoff-revisited-why-we-need-open-data-in-economics/)
+1. [Data Access and Research Transparency (DA-RT): A Joint Statement by Political Science Journal Editors.](http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=9911378&fulltextType=LT&fileId=S2049847015000448)
+1. [*AJPS* Replication and Verification Policy](https://ajps.org/ajps-replication-policy/) and [*American Journal of Political Science* Guidelines for Preparing Replication Files.](https://ajpsblogging.files.wordpress.com/2015/03/ajps-guide-for-replic-materials-1-0.pdf)
+1. [Gelman, Andrew, and Eric Loken.  2013.  "The Garden of Forking Paths: Why Multiple Comparisons Can Be a Problem, Even When There Is No 'Fishing Expedition' or '*p*-Hacking' and the Research Hypothesis Was Posited Ahead of Time."](http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf)
+1. [Leek, Jeffrey T., and Roger D. Peng. 2015.  "Opinion: Reproducibile Research Can Still Be Wrong: Adopting a Prevention Approach." *Proceedings of the National Academy of Sciences* 112(6):1645-1646](http://www.pnas.org.proxy.lib.uiowa.edu/content/112/6/1645) and [Patil, Prasad, Roger D. Peng, and Jeffrey T. Leek.  2016.  "A Statistical Definition for Reproducibility and Replicability."  *bioRxiv*, July 29.](http://biorxiv.org/content/biorxiv/early/2016/07/29/066803.full.pdf)
 1. [Solt, Frederick, Yue Hu, Kevan Hudson, Jungmin Song, and Dong ‘Erico’ Yu. 2017. “Economic Inequality and Class Consciousness.” *Journal of Politics* 79(3):1079-1083.](https://www-journals-uchicago-edu.proxy.lib.uiowa.edu/doi/pdfplus/10.1086/690971)
 
-*Assignments*: [Bryan, Jennifer. 2016. *Happy Git and GitHub for the UseR.* Chapter 18.](https://happygitwithr.com/rmd-test-drive.html) 
+*Assignments*: 
 
-[Ismay, Chester, and Albert Y. Kim.  2018.  *Modern Dive: An Introduction to Statistical and Data Sciences via R*.  Chapter 1 and 2.](https://moderndive.com/index.html)  A quick review.
+1. [Bryan, Jennifer. 2016. *Happy Git and GitHub for the UseR.* Chapter 18.](https://happygitwithr.com/rmd-test-drive.html) 
 
-## `r meeting_headers[3]`: Visualization
+## `r meeting_headers[3]`: Settling In with \textsf{R}
+*Readings*: 
+
+1. [Ismay, Chester, and Albert Y. Kim.  2018.  *Modern Dive: An Introduction to Statistical and Data Sciences via R*, Chapters 1 and 2.](https://moderndive.com/index.html)
+1. [Healy, Kieran. 2018.  *Data Visualization: A Practical Introduction*, Preface and Chapter 2.](https://socviz.co/) Some overlap with Ismay and Kim, but that will probably be useful to you at this point.
+1. [Solt, Frederick.  2018. "How to Switch Your Workflow from Stata to R, One Bit at a Time."](https://fsolt.org/blog/2018/08/15/switch-to-r.html)
+
 *Assignments*:
+
+1. Use the interactive \texttt{swirl} package ("Learn \textsf{R} in \textsf{R}") to learn (or review) some \textsf{R} basics.  First, run the following code to get to the \texttt{swirl} interface:
+```{r, eval=FALSE}
+install.packages("swirl")
+library("swirl")
+```
+>Then follow the prompts to the course \texttt{1:~R Programming:~The basics of programming in R} and complete lessons 1 through 9.  (When it asks whether you want Coursera credit, just say no.)
+
+
+\pagebreak
+## `r meeting_headers[4]`: Visualization
+*Readings*:
+
+1. [Kastellec, Jonathan P. and Eduardo L. Leoni. 2007. "Using Graphs Instead of Tables in Political Science." *Perspectives on Politics* 5(4):755--771.](http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S1537592707072209)
 1. [Ismay, Chester, and Albert Y. Kim.  2018.  "Data Visualization via ggplot2," *Modern Dive: An Introduction to Statistical and Data Sciences via R*, Chapter 3.](https://moderndive.com/3-viz.html)
-1. \href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S1537592707072209}{Kastellec, Jonathan P. and Eduardo L. Leoni. 2007. ``Using Graphs Instead of Tables in Political Science. \emph{Perspectives on Politics} 5(4):755--771.}
-1. \href{https://cran.r-project.org/web/packages/dotwhisker/vignettes/dotwhisker-vignette.html}{Solt, Frederick, and Yue Hu.  2015.  \texttt{dotwhisker}: Dot-and-Whisker Plots of Regression Results.  Available at The Comprehensive R Archive Network (CRAN).}, and especially \href{https://cran.r-project.org/web/packages/dotwhisker/vignettes/kl2007_examples.html}{how to remake the examples from Kastellec and Leoni (2007) using \texttt{dotwhisker}}.
+1. [Solt, Frederick, and Yue Hu.  2015.  "\texttt{dotwhisker}: Dot-and-Whisker Plots of Regression Results."  Available at The Comprehensive R Archive Network (CRAN).](https://cran.r-project.org/web/packages/dotwhisker/vignettes/dotwhisker-vignette.html), and especially [how to remake the examples from Kastellec and Leoni (2007) using \texttt{dotwhisker}](https://cran.r-project.org/web/packages/dotwhisker/vignettes/kl2007_examples.html).
+
+*Assignments*:
+
+1. [Healy, Kieran. 2018.  *Data Visualization: A Practical Introduction*, Chapters 1 and 3.](https://socviz.co/lookatdata.html) 
 
 *Recommended*:
-1. \href{http://www.cookbook-r.com/Graphs/}{Chang, Winston. *Cookbook for R*,  Chapter 8: Graphs.}  Skim a couple sections to get a feel for this as a resource. I refer to it all. the. time.
-1. [Healy, Kieran. 2018.  *Data Visualization: A Practical Introduction*.](https://socviz.co/) An entire course's worth of advice on what, why, and how to plot: it's really great.
-1. [Wilke, Claus O. 2019. "Visualizing Uncertainty," *Fundamentals of Data Visualization*, Chapter 16.] (https://serialmentor.com/dataviz/visualizing-uncertainty.html)  This whole book is recommended, too, actually.
-1. \href{http://r4ds.had.co.nz}{Grolemund, Garrett, and Hadley Wickham.  2016.  *R for Data Science*, chapters 1-4, 6, 8, 28.}
 
-## `r meeting_headers[4]`: Wranglin' Data
+1. [Chang, Winston. 2013. *Cookbook for R*,  Chapter 8: Graphs.](http://www.cookbook-r.com/Graphs/)  Skim a couple sections to get a feel for this as a reference.  I myself refer to it all. the. time.
+1. [Wilke, Claus O. 2019. "Visualizing Uncertainty," *Fundamentals of Data Visualization*](https://serialmentor.com/dataviz/visualizing-uncertainty.html)
 
-## `r meeting_headers[5]`: Wranglin' Data II, Working with Text
 
-## `r meeting_headers[6]`: Programming
+## `r meeting_headers[5]`: Wranglin' Data
+*Readings*:
 
+1. [Leeper, Thomas J. 2016. "\texttt{rio}: A Swiss-Army Knife for Data I/O. Import, Export, and Convert Data Files."](https://cran.r-project.org/web/packages/rio/vignettes/rio.html)
+1. [Ismay, Chester, and Albert Y. Kim.  2018.  "Data Visualization via ggplot2," *Modern Dive: An Introduction to Statistical and Data Sciences via R*, Chapters 4 and 5.](https://moderndive.com/4-tidy.html)
+1. [Healy, Kieran. 2018.  *Data Visualization: A Practical Introduction*, Chapters 4 and 5.](https://socviz.co/groupfacettx.html) 
+
+*Assignment*:
+
+1. [Robinson, David. Datacamp Course: Introduction to the Tidyverse.](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
+
+*Recommended*:
+
+1. [RStudio's Data Transformation Cheat Sheet.](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)  I had [the old version](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) open on a dedicated desktop on my computer for at least a year---maybe two!---before I finally stopped looking at it like twenty times a day.  Lots of people print it out; I've even heard of people laminating it.
+
+
+## `r meeting_headers[6]`: Wranglin' Data II, Working with Text
+*Assignment*:
+
+1. [Wickham, Charlotte. Datacamp Course: String Manipulation in R with stringr.](https://www.datacamp.com/courses/string-manipulation-in-r-with-stringr)
+
+*Recommended*:
+
+1. [RStudio's Work with Strings Cheat Sheet.](https://github.com/rstudio/cheatsheets/raw/master/strings.pdf)
+
+1. [Silge, Julia, and David Robinson. 2018. *Text Mining with R: A Tidy Approach*.](https://www.tidytextmining.com/index.html)
+
+
+\pagebreak
 ## `r meeting_headers[7]`: Scraping (and Managing) Data
 *Readings*:
 
-1. \href{https://rawgit.com/Reproducible-Science-Curriculum/rr-organization1/master/organization-01-slides.html}{Bryan, Jennifer. ``Organization I: File Naming.''}
-1. \href{https://politicalsciencereplication.wordpress.com/2015/03/16/good-practice-in-data-collection-and-storing/}{Janz, Nicole. 2015. ``Good Practice in Data Collection and Storing.'' \emph{Political Science Replication}, March 16.}
-1. \href{http://varianceexplained.org/r/trump-tweets/}{Robinson, David.  2016.  ``Text Analysis of Trump's Tweets Confirms He Writes Only the (Angrier) Android Half.'' \emph{Variance Explained}, August 9.}
+1. [Bryan, Jennifer. "Organization I: File Naming."](https://rawgit.com/Reproducible-Science-Curriculum/rr-organization1/master/organization-01-slides.html)
+1. [Janz, Nicole. 2015. "Good Practice in Data Collection and Storing." *Political Science Replication*, March 16.](https://politicalsciencereplication.wordpress.com/2015/03/16/good-practice-in-data-collection-and-storing/)
+1. [Robinson, David.  2016.  "Text Analysis of Trump's Tweets Confirms He Writes Only the (Angrier) Android Half." *Variance Explained*, August 9.](http://varianceexplained.org/r/trump-tweets/)
 1. [Persson, Eric. 2017. \texttt{gesis}: R Client for GESIS Data Catalogue (DBK). R package version
   0.2.1](https://cran.r-project.org/web/packages/gesis/vignettes/gesis.html), [Solt, Frederick and Kellen Gracey. 2016. \texttt{icpsrdata}: Reproducible Data Retrieval from the ICPSR Archive. R package version 0.3.0.](https://cran.r-project.org/web/packages/icpsrdata/vignettes/icpsrdata-vignette.html), and [Frederick Solt (2018). \texttt{ropercenter}: Reproducible Data Retrieval from the Roper Center Data Archive. R package version 0.2.0.](https://cran.r-project.org/web/packages/ropercenter/vignettes/ropercenter-vignette.html)
-1. \href{https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/}{RStudio.  2014.  ``\texttt{rvest}: Easy Web Scraping with R.''  \emph{RStudio Blog}, November 24.}
+1. [RStudio.  2014.  "\texttt{rvest}: Easy Web Scraping with R."  *RStudio Blog*, November 24.](https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/)
 
 
 ## `r meeting_headers[8]`: Multilevel Models of Multiple Surveys I
 *Readings*:
 
-\href{http://www.jstor.org.proxy.lib.uiowa.edu/stable/25193796}{Solt, Frederick.  2008.  ``Economic Inequality and Democratic Political Engagement.''  \emph{American Journal of Political Science} 52(1):48-60.}
-
+1. [Solt, Frederick.  2008.  "Economic Inequality and Democratic Political Engagement."  *American Journal of Political Science* 52(1):48-60.](http://www.jstor.org.proxy.lib.uiowa.edu/stable/25193796)
+1. [Solt, Frederick, Yue Hu, Kevan Hudson, Jungmin Song, and Dong ‘Erico’ Yu. 2017. “Economic Inequality and Class Consciousness.” *Journal of Politics* 79(3):1079-1083.](https://www-journals-uchicago-edu.proxy.lib.uiowa.edu/doi/pdfplus/10.1086/690971)  Yes, *again*, but this time, work through [the replication code](https://github.com/fsolt/class_consciousness/blob/master/paper/class_consciousness.Rnw).
 
 ## `r meeting_headers[9]`: Multilevel Models of Multiple Surveys II
 *Readings*:
 
+1. [Gabry, Jonah, and Ben Goodrich. 2018. "How to Use the \texttt{rstanarm} Package."](http://mc-stan.org/rstanarm/articles/rstanarm.html)
+
 
 ## `r meeting_headers[10]`: Spring Break
+
 
 ## `r meeting_headers[11]`: Crowdsourcing Cross-National Data
 *Readings*:
 
-1. \href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055416000058}{Benoit, Kenneth, Drew Conway, Benjamin E. Lauderdale, Michael Laver, and Slava Mikhaylov. 2016. ``Crowd-sourced Text Analysis: Reproducible and Agile Production of Political Data.'' \emph{American Political Science Review} 110(2):278-295.}
+1. [Benoit, Kenneth, Drew Conway, Benjamin E. Lauderdale, Michael Laver, and Slava Mikhaylov. 2016. "Crowd-sourced Text Analysis: Reproducible and Agile Production of Political Data." *American Political Science Review* 110(2):278-295.](http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055416000058)
+
+*Assignment*:
+
+1. Take-home exam: open book, open notes, open internet.  Don't click the GitHub invitation link until you have three hours to spend completing the exam.
+
 
 ## `r meeting_headers[12]`: Estimating Cross-National Latent Variables
 *Readings*: 
 
-1. \href{http://pan.oxfordjournals.org.proxy.lib.uiowa.edu/content/18/4/426}{Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2010. ``Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type.'' \emph{Political Analysis} 18(4):426-449.
-}
-1. \href{http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055414000070}{Fariss, Christopher~J. 2014. ``Respect for Human Rights Has Improved Over Time: Modeling the Changing Standard of Accountability.'' \emph{American Political Science Review} 108(2):297-318.}
-1. \href{http://www.journals.uchicago.edu.proxy.lib.uiowa.edu/doi/10.1086/682150}{Linzer, Drew A., and Jeffrey~K. Staton. 2015. ``A Global Measure of Judicial Independence, 1948-2012.'' \emph{Journal of Law and Courts} 3(2):223-256.}
+1. [Pemstein, Daniel, Stephen A. Meserve, and James Melton. 2010. "Democratic Compromise: A Latent Variable Analysis of Ten Measures of Regime Type." *Political Analysis* 18(4):426-449.](http://pan.oxfordjournals.org.proxy.lib.uiowa.edu/content/18/4/426)
+1. [Fariss, Christopher J. 2014. "Respect for Human Rights Has Improved Over Time: Modeling the Changing Standard of Accountability." *American Political Science Review* 108(2):297-318.](http://dx.doi.org.proxy.lib.uiowa.edu/10.1017/S0003055414000070) 
+1. [Linzer, Drew A., and Jeffrey K. Staton. 2015. "A Global Measure of Judicial Independence, 1948-2012." *Journal of Law and Courts* 3(2):223-256.](http://www.journals.uchicago.edu.proxy.lib.uiowa.edu/doi/10.1086/682150) 
+1. Solt, Frederick. 2019. "Measuring Income Inequality Across Countries and Over Time: The Standardized World Income Inequality Database".
 
+\pagebreak
 ## `r meeting_headers[13]`: Analysis with Cross-National Latent Variables
 *Readings*:
-1. \href{http://rap.sagepub.com/content/2/3/2053168015605343}{Crabtree, Charles~D., and Fariss, Christopher~J. 2015.  ``Uncovering Patterns Among Latent Variables: Human Rights~and De Facto Judicial Independence.'' \emph{Research \& Politics} 2(3):1-9.}
+
+1. [Crabtree, Charles D., and Fariss, Christopher J. 2015.  "Uncovering Patterns Among Latent Variables: Human Rights and De Facto Judicial Independence." *Research & Politics* 2(3):1-9.](http://rap.sagepub.com/content/2/3/2053168015605343)
 
 *Assignment*:
-\href{http://www.unified-democracy-scores.org/example.html}{Pemstein, Meserve, and Melton provide an example} of how use Stata to employ their Unified Democracy Scores in research.  Replicate their example but show instead how to use the UDS in \textsf{R}.  You \emph{might} find \href{http://dx.doi.org/10.7910/DVN/LVYOKM}{Crabtree and Fariss's reproducibility materials} to be a bit helpful, but you should of course use the \texttt{tidyverse} methods we've learned this semester.
+
+1. [Pemstein, Meserve, and Melton provide an example](http://www.unified-democracy-scores.org/example.html) of how use Stata to employ their Unified Democracy Scores in research.  Replicate their example but show instead how to use the UDS in \textsf{R}.  You \emph{might} find [Crabtree and Fariss's reproducibility materials](http://dx.doi.org/10.7910/DVN/LVYOKM) to be a bit helpful, but you should of course use the \texttt{tidyverse} methods we've learned this semester.
 
 
 ## `r meeting_headers[14]`: Public Opinion in One Country as a Latent Variable
 *Readings*:
 
-1. \href{http://pan.oxfordjournals.org.proxy.lib.uiowa.edu/content/22/1/115.abstract}{McGann, Anthony J. 2014. ``Estimating the Political Center from Aggregate Data: An Item Response Theory Alternative to the Stimson Dyad Ratios Algorithm.'' \emph{Political Analysis} 22(1):115-129.}
+1. [McGann, Anthony J. 2014. "Estimating the Political Center from Aggregate Data: An Item Response Theory Alternative to the Stimson Dyad Ratios Algorithm." *Political Analysis* 22(1):115-129.](http://pan.oxfordjournals.org.proxy.lib.uiowa.edu/content/22/1/115.abstract)
+
 
 ## `r meeting_headers[15]`: Public Opinion as a Cross-National Latent Variable
-*Readings*: TBA
+*Readings*:
+
+1. TBA
 
 
 ## `r meeting_headers[16]`: Presentations
+*Readings*:
 
-## Further Course Information
+1. [Huber, Gregory. "How to Present Your Work at Conferences."](https://huber.research.yale.edu/materials/HowToPresentAtConferences.pdf)
+
+*Recommended*:
+
+1. [Secklington, Melinda. 2018. "The Art of Talk Design."](https://speakerdeck.com/mseckington/the-art-of-talk-design)
+1. [Secklington, Melinda. 2017. "The Art of Slide Design."](https://speakerdeck.com/mseckington/the-art-of-slide-design)
+
+
+\pagebreak
+# Further Course Information
 
 ### Administrative Home
-The College of Liberal Arts and Sciences is the administrative home of this course and governs matters such as the add/drop deadlines, the second-grade-only option, and other related issues. Different colleges may have different policies. Questions may be addressed to 120 Schaeffer Hall, or see the [CLAS *Student Academic Handbook*](http://clas.uiowa.edu/students/handbook).
+The College of Liberal Arts and Sciences (CLAS) is the administrative home of this course and governs its add/drop deadlines, the second-grade-only option, and other policies. These policies vary by college. See the [CLAS *Student Academic Handbook*](http://clas.uiowa.edu/students/handbook).
 
 ### Electronic Communication
-University policy specifies that students are responsible for all official correspondences sent to their University of Iowa e-mail address (@uiowa.edu). Faculty and students should use this account for correspondences. ([*Operations Manual*](http://www.uiowa.edu/~our/opmanual/iii/15.htm#152), III.15.2. Scroll down to k.11.)  In fact, I will only respond to email sent from your Hawkmail (that is, @uiowa.edu) email account.
+Students are responsible for official correspondences sent to their UI email address (uiowa.edu) and must use this address for all communication within UI ([*Operations Manual*](http://www.uiowa.edu/~our/opmanual/iii/15.htm#152), III.15.2. Scroll down to k.11.)
 
 ### Accommodations for Disabilities
-The University of Iowa is committed to providing an educational experience that is accessible to all students. A student may request academic accommodations for a disability (which includes but is not limited to mental health, attention, learning, vision, and physical or health-related conditions). A student seeking academic accommodations should first register with Student Disability Services and then meet with the course instructor privately in the instructor's office to make particular arrangements. Reasonable accommodations are established through an interactive process between the student, instructor, and SDS. See <https://sds.studentlife.uiowa.edu/> for information. 
+UI is committed to an educational experience that is accessible to all students. A student may request academic accommodations for a disability (such as mental health, attention, learning, vision, and physical or health-related condition) by registering with Student Disability Services (SDS). The student should then discuss accommodations with the course instructor. See <https://sds.studentlife.uiowa.edu/> for more information. 
+
+### Nondiscrimination in the Classroom
+UI is committed to making the classroom a respectful and inclusive space for all people irrespective of their gender, sexual, racial, religious or other identities. Toward this goal, students are invited to optionally share their preferred names and pronouns with their instructors and classmates. The University of Iowa prohibits discrimination and harassment against individuals on the basis of race, class, gender, sexual orientation, national origin, and other identity categories set forth in the University’s Human Rights policy. For more information, contact the Office of Equal Opportunity and Diversity.  See <diversity.uiowa.edu> for more information.
 
 ### Academic Honesty
-All CLAS students or students taking classes offered by CLAS have, in essence, agreed to the College's [Code of Academic Honesty](https://clas.uiowa.edu/students/handbook/academic-fraud-honor-code): "I pledge to do my own academic work and to excel to the best of my abilities, upholding the [IOWA Challenge](https://newstudents.uiowa.edu/iowa-challenge). I promise not to lie about my academic work, to cheat, or to steal the words or ideas of others; nor will I help fellow students to violate the Code of Academic Honesty." Any student committing academic misconduct is reported to the College and placed on disciplinary probation or may be suspended or expelled ([CLAS Academic Policies Handbook](https://clas.uiowa.edu/students/handbook)).
+All CLAS students or students taking classes offered by CLAS have, in essence, agreed to the College's [Code of Academic Honesty](https://clas.uiowa.edu/students/handbook/academic-fraud-honor-code). Misconduct is reported to the College, resulting in suspension or other sanctions, with sanctions communicated with the student through the UI email address See <https://clas.uiowa.edu/students/handbook/academic-fraud-honor-code> for more information.
 
 ### CLAS Final Examination Policies
-The final examination schedule for each class is announced by the Registrar generally by the fifth week of classes. Final exams are offered only during the official final examination period. **No exams of any kind are allowed during the last week of classes.** All students should plan on being at the UI through the final examination period. Once the Registrar has announced the date, time, and location of each final exam, the complete schedule will be published on the Registrar's web site and will be shared with instructors and students. It is the student's responsibility to know the date, time, and place of a final exam.
+The final exam schedule for each semester is announced around the fifth week of classes; students are responsible for knowing the date, time, and place of a final exam. Students should not make travel plans until knowing this final exam information. No exams of any kind are allowed the week before finals.  See <https://clas.uiowa.edu/faculty/teaching-policies-resources-examination-policies> for more information.
 
-### Making a Suggestion or a Complaint
-Students with a suggestion or complaint should first visit the instructor, [Professor Solt](mailto:frederick-solt@uiowa.edu), and then the departmental DEO, [Dr. Brian Lai](mailto:brian-lai@uiowa.edu) (Office: 343 SH). Complaints must be made within six months of the incident. See the [CLAS Student Academic Handbook](http://clas.uiowa.edu/students/handbook).
+### Making a Complaint
+Students with a suggestion or complaint should first visit the instructor, [Professor Solt](mailto:frederick-solt@uiowa.edu), and then the departmental DEO, [Dr. Brian Lai](mailto:brian-lai@uiowa.edu) (Office: 343 SH). Students may then bring the concern to CLAS See <https://clas.uiowa.edu/students/handbook/student-rights-responsibilities> for more information.
 
 ### Understanding Sexual Harassment
-Sexual harassment subverts the mission of the University and threatens the well-being of students, faculty, and staff. All members of the UI community have a responsibility to uphold this mission and to contribute to a safe environment that enhances learning. Incidents of sexual harassment should be reported immediately. See the [UI Office of the Sexual Misconduct Response Coordinator](https://osmrc.uiowa.edu/) for assistance, definitions, and the full University policy.
+Sexual harassment subverts the mission of the University and threatens the well-being of students, faculty, and staff. All members of the UI community must uphold the UI mission and contribute to a safe environment that enhances learning. Incidents of sexual harassment must be reported immediately. For assistance, definitions, and the full University policy, see <https://osmrc.uiowa.edu/>.
 
 ### Reacting Safely to Severe Weather
 In severe weather, class members should seek appropriate shelter immediately, leaving the classroom if necessary. The class will continue if possible when the event is over. For more information on Hawk Alert and the siren warning system, visit the [Department of Public Safety website](https://police.uiowa.edu/emergency-communications).
