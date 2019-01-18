@@ -1,0 +1,25 @@
+Split class time between general professionalization concerns, lectures (mostly in the first half), working through snags on assignments (mostly in the first half), discussions of readings
+
+We're going to spend a lot of time on basics, because we just don't teach them anywhere else, and we can't move forward without them.  We'll take all the time we need.
+
+GitHub Websites
+RMarkdown CVs
+
+Asking for help
+
+Due Feb 20
+https://compsocialscience.github.io/summer-institute/2019/
+
+****
+
+text classifiers/ML
+
+using HPC cluster
+
+programming in Stan
+
+writing R packages
+
+Shiny
+
+
