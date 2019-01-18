@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>POLI 7002/7450</title>
+    <link>/</link>
+    <description>Recent content on POLI 7002/7450</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Home</title>
+      <link>/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/</guid>
+      <description>Computational Methods for Comparative Research In this course, you will learn to identify common methodological issues encountered in quantitative comparative research and to address them using computational techniques. Topics covered include data wrangling, exploration, and analysis (i.e., &amp;lsquo;data science&amp;rsquo;); Bayesian estimation of latent variables such as democracy, judicial independence, and respect for human rights across countries and over time; and computational approaches to the study to the dynamics of public opinion both within and across countries.</description>
+    </item>
+    
+  </channel>
+</rss>

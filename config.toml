@@ -1,0 +1,60 @@
+baseurl = "http://cmcr-class.github.io"
+relativeurls = false
+languageCode = "en-us"
+title = "POLI 7002/7450"
+theme = "hugo-fs-theme"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+uglyURLS = true
+enableEmoji = true
+blogdir = "blog"
+
+[permalinks]
+    post = "/blog/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "Syllabus"
+    url = "https://github.com/cmcr-class/cmcr-class.github.io/blob/master/syllabus/7450CMCR_Syl.pdf"
+    weight = 2
+[[menu.main]]
+    name = "Slides"
+    url = "https://github.com/cmcr-class/cmcr-class.github.io/tree/master/slides"
+    weight = 3
+[[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 4
+[[menu.main]]
+    name = "Discussion"
+    url = "https://github.com/orgs/cmcr-class/teams/students/discussions/"
+    weight = 5
+
+[params]
+    description = "Computational Methods for Comparative Research"
+    subtitle = "Prof. Frederick Solt"
+
+    author = "Frederick Solt"
+    dateFormat = "2006/01/02"
+    email = "frederick-solt@uiowa.edu"
+    github_username = "cmcr-class"
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.11.0"
+    highlightjsCDN = "//cdn.bootcss.com"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdn.bootcss.com"
+    MathJaxVersion = "2.7.1"
+
+    [params.logo]
+    url = "logo.png"
+    width = 50
+    height = 50
+    alt = "Logo"
+

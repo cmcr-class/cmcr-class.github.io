@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+
+{{ range .Site.Pages }}
+  {{ if intersect .Params.tags (slice "note" "update") | len | lt 0 }}
+
+      <h3><a href="{{ .URL }}">{{ .Title }}</a></h3>
+      <h5>{{ .Date.Format "Monday, 2 January 2006" }}</h5>
+    <div class="entry">
+        {{ .Content}}
+    </div>
+    
+  {{ end }}
+{{ end }}
+
+
+{{ partial "footer.html" . }}

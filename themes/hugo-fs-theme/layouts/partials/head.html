@@ -1,0 +1,51 @@
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title> {{ .Page.Title }} &middot; {{ .Site.Title }} </title>
+  
+  {{ if eq .URL "/" }}
+    <title>{{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website">
+    <meta property="description" content="{{ .Site.Params.description }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="http://fsolt.org/img/fsolt.jpeg">
+    {{ else }}
+    <title>{{ .Page.Title }} &middot; {{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Page.Title }} &middot; {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+    
+      {{ if .Params.twitter_image }}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="http://fsolt.org/{{ .Params.twitter_image }}" >
+      {{ else }}
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:image" content="http://fsolt.org/img/fsolt.jpeg">
+      {{ end }}
+      
+      {{ $defaultDescription := .Site.Params.description }}
+      <meta property="description" content="{{ .Description | default $defaultDescription }}">
+      <meta property="og:description" content="{{ .Description | default $defaultDescription }}">
+    {{ end }}
+    
+    <meta name="twitter:creator" content="{{ .Params.twitter_username }}">
+    <meta name="twitter:site" content="{{ .Params.twitterSite }}">
+  
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/flatly-bootstrap.css"> 
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/academicons.css">
+  
+
+{{ partial "head_highlightjs" . }}
+
+</head>
