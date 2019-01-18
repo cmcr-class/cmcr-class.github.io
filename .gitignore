@@ -9,3 +9,4 @@
 *.sty
 dev/*
 *.Rproj
+*.DS_Store
