@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: redirect
 title: Home
+loc: https://cmcr-class.rbind.io/
 output: html_document
 ---
 
